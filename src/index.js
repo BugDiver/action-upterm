@@ -19,8 +19,8 @@ export async function run() {
 
     core.debug("Installing dependencies")
     if (process.platform == "linux") {
-      await execShellCommand("curl -sL https://github.com/owenthereal/upterm/releases/download/v0.6.7/upterm_linux_amd64.tar.gz | tar zxvf - -C /tmp upterm && sudo install /tmp/upterm /usr/local/bin/")
-      await execShellCommand("sudo apt-get -y install tmux")
+      await execShellCommand("curl -sL https://github.com/owenthereal/upterm/releases/download/v0.6.7/upterm_linux_amd64.tar.gz | tar zxvf - -C /tmp upterm && install /tmp/upterm /usr/local/bin/")
+      await execShellCommand("apt-get -y install tmux")
     } else {
       await execShellCommand("brew install owenthereal/upterm/upterm")
       await execShellCommand("brew install tmux")
